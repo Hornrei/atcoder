@@ -1,0 +1,41 @@
+/1
+  SELECT * FROM customers;
+
+/2
+  SELECT customername, address FROM customers;
+
+/3
+  SELECT COUNT(*) FROM customers;
+
+/4
+  SELECT productname, price FROM products ORDER BY price DESC;
+
+/5
+  SELECT AVG(price) FROM products;
+
+/6
+  SELECT customername FROM customers WHERE customerclassid = 2;
+
+/7
+  SELECT customername, customerclassid, address FROM customers WHERE prefecturalid = 13 AND customerclassid = 1;
+
+/8
+  SELECT customername, address FROM customers WHERE address LIKE '江戸川区%';
+
+/9
+  SELECT productname,price FROM products WHERE price BETWEEN 100 AND 200;
+
+/10
+  SELECT categoryid, COUNT(*) FROM products GROUP BY categoryid;
+
+/11
+  SELECT categoryid, SUM(price) FROM products GROUP BY categoryid;
+
+/12
+  SELECT prefecturalid, COUNT(*) FROM customers GROUP BY prefecturalid;
+
+/13
+  SELECT prefecturalid, COUNT(*) FROM customers WHERE customerclassid = 2 GROUP BY prefecturalid;
+
+/14
+  SELECT prefecturalid, COUNT(*) FROM customers GROUP BY prefecturalid HAVING COUNT(*) < 3;
